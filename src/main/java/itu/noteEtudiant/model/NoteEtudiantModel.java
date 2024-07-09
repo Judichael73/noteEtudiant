@@ -15,6 +15,9 @@ public class NoteEtudiantModel {
     String nom;
     String prenom;
     String nom_classe;
+    int id_note_etudiant;
+    double note;
+    String nom_matiere;
 
     
     public int getId_etudiant() {
@@ -58,6 +61,25 @@ public class NoteEtudiantModel {
     }
     public void setNom_classe(String nom_classe) {
         this.nom_classe = nom_classe;
+    }
+
+    public int getId_note_etudiant() {
+        return id_note_etudiant;
+    }
+    public void setId_note_etudiant(int id_note_etudiant) {
+        this.id_note_etudiant = id_note_etudiant;
+    }
+    public double getNote() {
+        return note;
+    }
+    public void setNote(double note) {
+        this.note = note;
+    }
+    public String getNom_matiere() {
+        return nom_matiere;
+    }
+    public void setNom_matiere(String nom_matiere) {
+        this.nom_matiere = nom_matiere;
     }
 
     
@@ -115,5 +137,40 @@ public class NoteEtudiantModel {
         return list_rang_etudiant.toArray(new NoteEtudiantModel[list_rang_etudiant.size()]);    
     }
     
+
+    public NoteEtudiantModel[] getViewNoteEtudiant(int id_etudiant) throws CustomException
+    {
+        List<NoteEtudiantModel> list_rang_etudiant = new ArrayList<>();
+        Conn c = new Conn();
+        Connection conn = c.getConnex();
+        try 
+        {
+            String sql = "select * from v_note_etudiant where id_etudiant="+id_etudiant+"";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet result = pstmt.executeQuery();    
+
+            while (result.next()) {
+                NoteEtudiantModel note = new NoteEtudiantModel();
+                
+            }
+
+
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+            throw new CustomException("Erreur dans getViewV_V_RangEtudiantWhere");
+        }
+        finally{
+            try {
+                conn.close();
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
+        }
+        return list_rang_etudiant.toArray(new NoteEtudiantModel[list_rang_etudiant.size()]);    
+
+    }
+
 
 }
