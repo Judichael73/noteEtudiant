@@ -37,8 +37,7 @@ create table classe
 insert into classe(nom_classe)
 VALUES
 ('1ere annee'),
-('2eme annee'),
-('3eme annee');
+('2eme annee');
 
 create table matiere
 (
@@ -62,28 +61,134 @@ create table note_etudiant
 );
 
 
+insert into note_etudiant(id_etudiant,id_classe,id_matiere,note)
+VALUES
+(1,1,1,90),
+(1,1,2,45),
+(1,1,3,10.5),
+(1,1,4,60),
+(1,1,5,100),
 
--- Inserting notes for each student
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (1, 1, 1, 85);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (2, 1, 2, 90);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (3, 1, 3, 88);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (4, 1, 4, 92);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (5, 1, 5, 75);
+(2,1,1,90),
+(2,1,2,90),
+(2,1,3,100),
+(2,1,4,12),
+(2,1,5,12),
 
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (6, 2, 1, 82);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (7, 2, 2, 87);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (8, 2, 3, 79);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (9, 2, 4, 91);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (10, 2, 5, 84);
 
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (11, 3, 1, 89);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (12, 3, 2, 85);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (13, 3, 3, 93);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (14, 3, 4, 77);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (15, 3, 5, 88);
+(3,1,1,12),
+(3,1,2,6),
+(3,1,3,4),
+(3,1,4,0),
+(3,1,5,12),
 
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (16, 1, 1, 90);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (17, 1, 2, 85);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (18, 1, 3, 80);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (19, 1, 4, 70);
-INSERT INTO note_etudiant (id_etudiant, id_classe, id_matiere, note) VALUES (20, 1, 5, 95);
+
+(4,1,1,90),
+(4,1,2,90),
+(4,1,3,100),
+(4,1,4,100),
+(4,1,5,75),
+
+
+(5,1,1,12),
+(5,1,2,0),
+(5,1,3,0),
+(5,1,4,12),
+(5,1,5,12),
+
+
+(6,1,1,90),
+(6,1,2,90),
+(6,1,3,100),
+(6,1,4,12),
+(6,1,5,13),
+
+
+(7,1,1,90),
+(7,1,2,90),
+(7,1,3,90),
+(7,1,4,0),
+(7,1,5,0),
+
+
+(8,1,1,0),
+(8,1,2,0),
+(8,1,3,0),
+(8,1,4,0),
+(8,1,5,0),
+
+
+
+(9,1,1,90),
+(9,1,2,90),
+(9,1,3,90),
+(9,1,4,90),
+(9,1,5,90),
+
+(10,1,1,90),
+(10,1,2,90),
+(10,1,3,90),
+(10,1,4,100),
+(10,1,5,99);
+----------------------------------------------------------
+INSERT INTO note_etudiant(id_etudiant, id_classe, id_matiere, note)
+VALUES
+(11, 2, 1, 67),
+(11, 2, 2, 89),
+(11, 2, 3, 53),
+(11, 2, 4, 34),
+(11, 2, 5, 71),
+
+(12, 2, 1, 21),
+(12, 2, 2, 98),
+(12, 2, 3, 49),
+(12, 2, 4, 45),
+(12, 2, 5, 61),
+
+(13, 2, 1, 37),
+(13, 2, 2, 83),
+(13, 2, 3, 56),
+(13, 2, 4, 92),
+(13, 2, 5, 11),
+
+(14, 2, 1, 75),
+(14, 2, 2, 18),
+(14, 2, 3, 90),
+(14, 2, 4, 64),
+(14, 2, 5, 22),
+
+(15, 2, 1, 29),
+(15, 2, 2, 85),
+(15, 2, 3, 47),
+(15, 2, 4, 39),
+(15, 2, 5, 14),
+
+(16, 2, 1, 95),
+(16, 2, 2, 76),
+(16, 2, 3, 83),
+(16, 2, 4, 59),
+(16, 2, 5, 41),
+
+(17, 2, 1, 65),
+(17, 2, 2, 33),
+(17, 2, 3, 99),
+(17, 2, 4, 54),
+(17, 2, 5, 26),
+
+(18, 2, 1, 88),
+(18, 2, 2, 77),
+(18, 2, 3, 12),
+(18, 2, 4, 67),
+(18, 2, 5, 44),
+
+(19, 2, 1, 82),
+(19, 2, 2, 15),
+(19, 2, 3, 63),
+(19, 2, 4, 70),
+(19, 2, 5, 52),
+
+(20,2, 1, 93),
+(20,2, 2, 27),
+(20,2, 3, 85),
+(20,2, 4, 10),
+(20,2, 5, 99);
