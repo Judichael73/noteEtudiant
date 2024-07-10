@@ -18,6 +18,7 @@ public class NoteEtudiantModel {
     int id_note_etudiant;
     double note;
     String nom_matiere;
+    int id_matiere;
 
     
     public int getId_etudiant() {
@@ -80,6 +81,13 @@ public class NoteEtudiantModel {
     }
     public void setNom_matiere(String nom_matiere) {
         this.nom_matiere = nom_matiere;
+    }
+
+    public int getId_matiere() {
+        return id_matiere;
+    }
+    public void setId_matiere(int id_matiere) {
+        this.id_matiere = id_matiere;
     }
 
     
@@ -151,7 +159,16 @@ public class NoteEtudiantModel {
 
             while (result.next()) {
                 NoteEtudiantModel note = new NoteEtudiantModel();
-                
+                note.setId_note_etudiant(result.getInt(1));
+                note.setId_etudiant(result.getInt(2));
+                note.setId_classe(result.getInt(3));
+                note.setId_matiere(result.getInt(4));
+                note.setNote(result.getDouble(5));
+                note.setNom(result.getString(6));
+                note.setPrenom(result.getString(7));
+                note.setNom_classe(result.getString(8));
+                note.setNom_matiere(result.getString(9));
+                list_rang_etudiant.add(note);
             }
 
 

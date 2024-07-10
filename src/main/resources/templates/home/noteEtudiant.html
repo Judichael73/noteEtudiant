@@ -106,8 +106,7 @@
         
 
 
-
-            <h1>Choisir les eleve pour voir ses notes  </h1>
+            <h1>Note de l'etudiant par matiere</h1>
 
             <div class="col-lg-8 d-flex align-items-stretch">
                 <div class="card w-100">
@@ -127,13 +126,16 @@
                                 <h6 class="fw-semibold mb-0">Prenom</h6>
                             </th>
                             
-
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Moyenne</h6>
+                                <h6 class="fw-semibold mb-0">classe</h6>
                             </th>
                             
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Rang</h6>
+                                <h6 class="fw-semibold mb-0">Nom matiere</h6>
+                            </th>
+
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">note</h6>
                             </th>
 
                             
@@ -142,29 +144,28 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="list_Rang:${rangEtudiant}">
+                        <tr th:each="list_note_etudiant:${noteEtudiant}">
+
                             <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0" th:text="${list_Rang.getNom()}"></h6>
-                            </td>
-                            
-                            <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0" th:text="${list_Rang.getPrenom()}"></h6>
-                            </td>
-                            
-                            <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0" th:text="${list_Rang.getMoyenne()}"></h6>
+                                <h6 class="fw-semibold mb-0" th:text="${list_note_etudiant.getNom()}"></h6>
                             </td>
 
                             <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0" th:text="${list_Rang.getRank()}"></h6>
+                                <h6 class="fw-semibold mb-0" th:text="${list_note_etudiant.getPrenom()}"></h6>
                             </td>
 
-                            <td>
-                                <form action="/getEtudiantById" method="get">
-                                    <input type="hidden" name="id_etudiant" th:value="${list_Rang.getId_etudiant()}">
-                                    <input type="submit" value="Voir sa note matiere" class="btn btn-outline-primary">
-                                </form>
+                            <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0" th:text="${list_note_etudiant.getNom_classe()}"></h6>
                             </td>
+
+                            <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0" th:text="${list_note_etudiant.getNom_matiere()}"></h6>
+                            </td>
+                            
+                            <td class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0" th:text="${list_note_etudiant.getNote()}"></h6>
+                            </td>
+
                         
                         </tr>
                         </tbody>
@@ -173,11 +174,6 @@
                 </div>
                 </div>
             </div>
-
-
-
-
-
 
 
 

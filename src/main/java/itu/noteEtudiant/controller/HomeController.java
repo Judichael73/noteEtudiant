@@ -34,4 +34,14 @@ public class HomeController {
         return "home/rangEleve";
     }
 
+    @GetMapping("/getEtudiantById")
+    public String viewNoteEtudiant(@RequestParam("id_etudiant")int id_etudiant,Model model) throws CustomException
+    {
+        NoteEtudiantModel note = new NoteEtudiantModel();
+        NoteEtudiantModel[] getMatiereEtudiant = note.getViewNoteEtudiant(id_etudiant);
+
+        model.addAttribute("noteEtudiant", getMatiereEtudiant);
+        return "home/noteEtudiant";
+    }
+
 }
